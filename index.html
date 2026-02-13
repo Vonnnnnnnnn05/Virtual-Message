@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love</title>
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: min(320px, 90vw);
+  height: 200px;
+  cursor: pointer;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.envelope {
+  position: absolute;
+  inset: 0;
+  background: #e63946;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.flap {
+  position: absolute;
+  inset: 0;
+  background: #d62828;
+  clip-path: polygon(0 0, 50% 60%, 100% 0);
+  transform-origin: top;
+  transition: transform 1s ease;
+  z-index: 3;
+  backface-visibility: hidden;
+}
+
+.heart {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  font-size: 30px;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.pocket {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 80%;
+  background: #e63946;
+  border-radius: 0 0 10px 10px;
+  z-index: 2;
+}
+
+.letter {
+  position: absolute;
+  left: 6%;
+  top: 12px;
+  width: 88%;
+  height: min(520px, 82vh);
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+  transform: translateY(52%) scale(0.55);
+  transform-origin: top center;
+  transition: transform 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) 0.28s, opacity 0.6s ease 0.2s;
+  opacity: 0;
+  z-index: 1;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.45;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  overflow-y: auto;
+  overflow-x: hidden;
+  will-change: transform, opacity;
+}
+
+.open .flap {
+  transform: rotateX(180deg);
+}
+
+.open .envelope {
+  overflow: visible;
+}
+
+.open .letter {
+  transform: translateY(-230px) translateZ(180px) scale(1);
+  opacity: 1;
+  z-index: 20;
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  margin-top: 0;
+  color: #e63946;
+}
+
+p {
+  margin: 0.2rem 0;
+}
+</style>
+</head>
+
+<body>
+  <div class="container" onclick="openEnvelope()">
+    <div class="envelope">
+      <div class="letter">
+        <h2>Happy Valentine's Day, love!❤️‍🩹</h2>
+        <p>
+          Hello love good morning and Happy Valentine's day!
+           I have nothing to give yet I can only provide assurance for you love but bare with me lang pooo, Kay puhon if kaluy an basig mag mayaman hehe. To be honest, you are the best girlfriend a man could ever have, you are so charming, you are so lovely and so adorable, your cared too much for me and I really loved that. You loved me for who I am and what I am. You deserved a lot love, and I am here to give you the love and assurance you need, I admit I can be harsh sometimes, yet I still love you very much, I love you super extra and more. I hope you'll never get tired of loving me, and I really do hope you wouldn't get bored with me because I love you so much and I couldn't afford to lose you. I know usahay rapod ko maka ing ani pero I'll make this work jud ron HAHAHAHAHA because you deserve a lot more better or you deserved a the best. I really love you love and I hope you'd be able to know thattt! HAHAHAHHA bisag usahay pikon kayko, pero behind that love love tika. Unsa pa ba maingon nako ay? HAHAHAH I'm out of words but one thing I know is that love tika, not just today nga valentines but everyday in our daily lives. just remember that I love you ha? I won't leave you and also I would want to marry you one day. Ayaw rajud give up or mag himo og rason para mu give up. I love you deeply, I love you inside and out and mostly, I love you as a whole. Palangga jud tika love and I know nga kabalo ka ana, please don't be inlove with someone else by Taylor kuno HAHAHAHAHA. pero bitaw Ayaw gud ko ipagpalit sa uban, muhilak jud ko. HAHAHAHAHAHA Iloveyouuuu so muchhh babyy kooo and sorry I have nothing for now. bawi rako puhon ah??? Iloveyouuu!!! kitakits, the soonest! once again, Happy Valentine's Day and Iloveyouuuu!!!!❤️‍🩹
+        </p>
+      
+      </div>
+      <div class="pocket"></div>
+    </div>
+    <div class="flap"></div>
+    
+  </div>
+
+<script>
+function openEnvelope() {
+  document.querySelector(".container").classList.toggle("open");
+}
+</script>
+</body>
+</html>
